@@ -1,5 +1,5 @@
 let pokemonList = [
-    {name: "Bulbasaur", height: 70, type: ["grass", "poison"]},
-    {name: "Ivysaur", height: 100, type: ["grass", "poison"]},
-    {name: "Venusaur", height: 200, type: ["grass", "poison"]}
+    {name: "Bulbasaur", height: 70, types: ["grass", "poison"]},
+    {name: "Ivysaur", height: 100, types: ["grass", "poison"]},
+    {name: "Venusaur", height: 200, types: ["grass", "poison"]}
 ];
