@@ -50,6 +50,13 @@ let pokemonRepository = (function () {
         button.classList.add("button-design");
         listItem.appendChild(button);
         pokemonButtons.appendChild(listItem);
+        button.addEventListener("click", function(){
+            showDetails(pokemon);
+        });
+    // add function showDetails
+        function showDetails (pokemon) {
+            console.log(pokemon);
+        }
     }
     return {
         getAll: getAll,
