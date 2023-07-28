@@ -49,7 +49,15 @@ let pokemonRepository = (function () {
 
 // accesing IIFE objects
 pokemonRepository.getAll().forEach(function(pokemon) {
-    document.write(pokemon.name + ' has a height of: ' + pokemon.height + "<br>");
+    let pokemonButtons = document.querySelector('.pokemon-buttons');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button-design');
+    listItem.appendChild(button);
+    pokemonButtons.appendChild(listItem);
+
+    // document.write(pokemon.name + ' has a height of: ' + pokemon.height + "<br>");
 });
 
 
