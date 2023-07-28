@@ -40,22 +40,28 @@ let pokemonRepository = (function () {
             console.log("wrong input for pokemon list")
         }
     }
+
+    //  adding function addListItem
+    function addListItem (pokemon) {
+        let pokemonButtons = document.querySelector(".pokemon-buttons");
+        let listItem = document.createElement("li");
+        let button = document.createElement("button");
+        button.innerText = pokemon.name;
+        button.classList.add("button-design");
+        listItem.appendChild(button);
+        pokemonButtons.appendChild(listItem);
+    }
     return {
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem: addListItem
     }
 
 })()
 
 // accesing IIFE objects
 pokemonRepository.getAll().forEach(function(pokemon) {
-    let pokemonButtons = document.querySelector('.pokemon-buttons');
-    let listItem = document.createElement('li');
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add('button-design');
-    listItem.appendChild(button);
-    pokemonButtons.appendChild(listItem);
+    pokemonRepository.addListItem(pokemon);
 
     // document.write(pokemon.name + ' has a height of: ' + pokemon.height + "<br>");
 });
