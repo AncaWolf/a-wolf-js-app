@@ -50,7 +50,7 @@ let pokemonRepository = (function () {
 
   // add function showDetails - later edit(20230802) - modified code to use fetch. edit 14 August: modified for Bootstrap modal
     function showDetails(item) {
-        pokemonRepository.loadDetails(pokemon).then(function () {
+        pokemonRepository.loadDetails(item).then(function () {
 
             const modalContainer = document.getElementById('modal-container');
             const modalTitle = document.getElementById('modal-title');
