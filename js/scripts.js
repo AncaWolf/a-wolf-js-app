@@ -49,8 +49,8 @@ let pokemonRepository = (function () {
   }
 
   // add function showDetails - later edit(20230802) - modified code to use fetch. edit 14 August: modified for Bootstrap modal
-      function showDetails (pokemon) {
-          loadDetails(pokemon).then(function () {
+    function showDetails(item) {
+        pokemonRepository.loadDetails(pokemon).then(function () {
 
             const modalContainer = document.getElementById('modal-container');
             const modalTitle = document.getElementById('modal-title');
@@ -65,19 +65,17 @@ let pokemonRepository = (function () {
 
             modalClose.addEventListener('click', function () {
               modalContainer.style.display = 'none';
-            })
+            });
 
             modalContainer.style.display = 'block';
-
-              console.log(pokemon);
-          })            
+          });           
         }
       
 
-  function loadList() {
-      return fetch(apiURL).then(function (response) {
+    function loadList() {
+        return fetch(apiURL).then(function (response) {
           return response.json();            
-      }).then(function (json) {
+        }).then(function (json) {
           json.results.forEach(function (item) {
               let pokemon = {
                   name: item.name,
@@ -85,10 +83,10 @@ let pokemonRepository = (function () {
               };
               add(pokemon);
           });
-      }).catch(function (e) {
+        }).catch(function (e) {
           console.error(e);
-      })
-  }
+        })
+    }
 
   return {
       getAll: getAll,
